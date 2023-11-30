@@ -38,4 +38,4 @@ Developers who create extensions for Joomla! CMS are provided with additional fu
 *Included in package*
 * [JLSitemap integration plugin](https://www.septdir.com/solutions/joomla/plugins/jlsitemap-swjprojects)  
 *Downloaded separately*
-
+test
