@@ -90,9 +90,9 @@ $columns = 9;
 						</tfoot>
 						<tbody>
 						<?php foreach ($this->items as $i => $item) :
-							$canEdit = $user->authorise('core.edit', 'com_swjprojects.version.' . $item->id);
+                            $itemEditable = $user->authorise('core.edit', 'com_swjprojects.version.' . $item->id) || ($user->authorise('core.edit.own', 'com_swjprojects.version.' . $item->id) && $item->created_by == $user->id);
 							$canChange = $user->authorise('core.edit.state', 'com_swjprojects.version.' . $item->id);
-							$link = ($canEdit) ? Route::_('index.php?option=com_swjprojects&task=version.edit&id='
+							$link = ($itemEditable) ? Route::_('index.php?option=com_swjprojects&task=version.edit&id='
 								. $item->id) : '';
 							?>
 							<tr class="row<?php echo $i % 2; ?>" data-draggable-group="1">

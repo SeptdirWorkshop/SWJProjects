@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS `#__swjprojects_versions`
     `state`          tinyint(3)                                             NOT NULL DEFAULT 0,
     `project_id`     int(11)                                                NOT NULL DEFAULT 0,
     `date`           datetime                                               NULL,
+    `created_by`     int                                                    NOT NULL DEFAULT 0,
     `joomla_version` varchar(100)                                           NOT NULL DEFAULT '',
     `params`         text                                                   NULL,
     `downloads`      int(10)                                                NOT NULL DEFAULT 0,

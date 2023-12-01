@@ -170,17 +170,18 @@ class SWJProjectsViewCategories extends HtmlView
 			ToolbarHelper::custom('categories.rebuild', 'refresh.png', 'refresh_f2.png', 'JTOOLBAR_REBUILD', false);
 		}
 
+        // Add GitHub button
+        $link = 'https://github.com/SeptdirWorkshop/SWJProjects';
+        $github = LayoutHelper::render('components.swjprojects.toolbar.link',
+            array('link' => $link, 'text' => 'GitHub', 'icon' => ' fab fa-github', 'new' => true));
+        $toolbar->appendButton('Custom', $github, 'github');
+
 		// Add preferences button
 		if ($canDo->get('core.admin') || $canDo->get('core.options'))
 		{
 			ToolbarHelper::preferences('com_swjprojects');
 		}
 
-		// Add GitHub button
-		$link = 'https://github.com/SeptdirWorkshop/SWJProjects';
-		$github = LayoutHelper::render('components.swjprojects.toolbar.link',
-			array('link' => $link, 'text' => 'GitHub', 'icon' => ' fab fa-github', 'new' => true));
-		$toolbar->appendButton('Custom', $github, 'github');
 	}
 
 	/**

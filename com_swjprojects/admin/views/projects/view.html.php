@@ -154,6 +154,11 @@ class SWJProjectsViewProjects extends HtmlView
 			array('link' => $link, 'text' => 'COM_SWJPROJECTS_JOOMLA_UPDATE_SERVER', 'icon' => 'joomla'));
 		$toolbar->appendButton('Custom', $jupdate, 'joomla');
 
+        // Add GitHub button
+        $link = 'https://github.com/SeptdirWorkshop/SWJProjects';
+        $github = LayoutHelper::render('components.swjprojects.toolbar.link',
+            array('link' => $link, 'text' => 'GitHub', 'icon' => ' fab fa-github', 'new' => true));
+        $toolbar->appendButton('Custom', $github, 'github');
 
 		// Add preferences button
 		if ($canDo->get('core.admin') || $canDo->get('core.options'))
@@ -161,11 +166,6 @@ class SWJProjectsViewProjects extends HtmlView
 			ToolbarHelper::preferences('com_swjprojects');
 		}
 
-		// Add GitHub button
-		$link = 'https://github.com/SeptdirWorkshop/SWJProjects';
-		$github = LayoutHelper::render('components.swjprojects.toolbar.link',
-			array('link' => $link, 'text' => 'GitHub', 'icon' => ' fab fa-github', 'new' => true));
-		$toolbar->appendButton('Custom', $github, 'github');
 	}
 
 	/**

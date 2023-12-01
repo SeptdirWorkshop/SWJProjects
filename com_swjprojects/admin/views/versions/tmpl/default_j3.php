@@ -85,7 +85,7 @@ $columns = 9;
 				</tfoot>
 				<tbody>
 				<?php foreach ($this->items as $i => $item) :
-					$canEdit = $user->authorise('core.edit', 'com_swjprojects.version.' . $item->id);
+                    $itemEditable = $user->authorise('core.edit', 'com_swjprojects.version.' . $item->id) || ($user->authorise('core.edit.own', 'com_swjprojects.version.' . $item->id) && $item->created_by == $user->id);
 					$canChange = $user->authorise('core.edit.state', 'com_swjprojects.version.' . $item->id);
 					?>
 					<tr class="row<?php echo $i % 2; ?>" item-id="<?php echo $item->id ?>">
@@ -98,7 +98,7 @@ $columns = 9;
 							</div>
 						</td>
 						<td class="nowrap">
-							<?php if ($canEdit) : ?>
+							<?php if ($itemEditable) : ?>
 								<a class="hasTooltip" title="<?php echo Text::_('JACTION_EDIT'); ?>"
 								   href="<?php echo Route::_('index.php?option=com_swjprojects&task=version.edit&id='
 									   . $item->id); ?>">

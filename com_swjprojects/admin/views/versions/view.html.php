@@ -146,17 +146,18 @@ class SWJProjectsViewVersions extends HtmlView
 			ToolbarHelper::trash('versions.trash');
 		}
 
+
+        // Add GitHub button
+        $link = 'https://github.com/SeptdirWorkshop/SWJProjects';
+        $github = LayoutHelper::render('components.swjprojects.toolbar.link',
+            array('link' => $link, 'text' => 'GitHub', 'icon' => ' fab fa-github', 'new' => true));
+        $toolbar->appendButton('Custom', $github, 'github');
+
 		// Add preferences button
 		if ($canDo->get('core.admin') || $canDo->get('core.options'))
 		{
 			ToolbarHelper::preferences('com_swjprojects');
 		}
-
-		// Add GitHub button
-		$link = 'https://github.com/SeptdirWorkshop/SWJProjects';
-		$github = LayoutHelper::render('components.swjprojects.toolbar.link',
-			array('link' => $link, 'text' => 'GitHub', 'icon' => ' fab fa-github', 'new' => true));
-		$toolbar->appendButton('Custom', $github, 'github');
 	}
 
 	/**
