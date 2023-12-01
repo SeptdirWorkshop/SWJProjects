@@ -164,12 +164,6 @@ class SWJProjectsViewDocumentation extends HtmlView
 			ToolbarHelper::preferences('com_swjprojects');
 		}
 
-		// Add support button
-		$link    = 'https://www.septdir.com/support#solution=SWJProjects';
-		$support = LayoutHelper::render('components.swjprojects.toolbar.link',
-			array('link' => $link, 'text' => 'COM_SWJPROJECTS_SUPPORT', 'icon' => 'support', 'new' => true));
-		$toolbar->appendButton('Custom', $support, 'support');
-
 		// Add GitHub button
 		$link = 'https://github.com/SeptdirWorkshop/SWJProjects';
 		$github = LayoutHelper::render('components.swjprojects.toolbar.link',

@@ -1,11 +1,47 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <access component="com_swjprojects">
 	<section name="component">
-		<action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC"/>
+		<action name="core.admin" title="JACTION_ADMIN" description="JACTION_COMPONENT_SETTINGS"/>
 		<action name="core.manage" title="JACTION_MANAGE" description="JACTION_MANAGE_COMPONENT_DESC"/>
 		<action name="core.create" title="JACTION_CREATE" description="JACTION_CREATE_COMPONENT_DESC"/>
 		<action name="core.delete" title="JACTION_DELETE" description="JACTION_DELETE_COMPONENT_DESC"/>
 		<action name="core.edit" title="JACTION_EDIT" description="JACTION_EDIT_COMPONENT_DESC"/>
 		<action name="core.edit.state" title="JACTION_EDITSTATE" description="JACTION_EDITSTATE_COMPONENT_DESC"/>
+		<action name="core.edit.own" title="JACTION_EDITOWN"/>
+
+		<action name="projects.read" title="projects.read"/>
+		<action name="projects.create" title="projects.create"/>
+		<action name="projects.edit" title="projects.edit"/>
+		<action name="projects.edit.state" title="projects.edit.state"/>
+		<action name="projects.delete" title="projects.delete"/>
+
+
+		<action name="keys.read" title="keys.read"/>
+		<action name="keys.create" title="keys.create"/>
+		<action name="keys.edit" title="keys.edit"/>
+		<action name="keys.edit.state" title="keys.edit.state"/>
+		<action name="keys.delete" title="keys.delete"/>
+
+
+		<action name="versions.read" title="versions.read"/>
+		<action name="versions.create" title="versions.create"/>
+		<action name="versions.edit" title="versions.edit"/>
+		<action name="versions.edit.state" title="versions.edit.state"/>
+		<action name="versions.delete" title="versions.delete"/>
+
+
+		<action name="categories.read" title="categories.read"/>
+		<action name="categories.create" title="categories.create"/>
+		<action name="categories.edit" title="categories.edit"/>
+		<action name="categories.edit.state" title="categories.edit.state"/>
+		<action name="categories.delete" title="categories.delete"/>
+
+
+		<action name="documentation.read" title="documentation.read"/>
+		<action name="documentation.create" title="documentation.create"/>
+		<action name="documentation.edit" title="documentation.edit"/>
+		<action name="documentation.edit.state" title="documentation.edit.state"/>
+		<action name="documentation.delete" title="documentation.delete"/>
+
 	</section>
 </access>

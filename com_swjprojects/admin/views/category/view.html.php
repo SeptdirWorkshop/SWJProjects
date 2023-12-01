@@ -127,12 +127,6 @@ class SWJProjectsViewCategory extends HtmlView
 		$switcher = LayoutHelper::render('components.swjprojects.translate.switcher');
 		$toolbar->appendButton('Custom', $switcher, 'translate-switcher');
 
-		// Add support button
-		$link     = 'https://www.septdir.com/support#solution=SWJProjects';
-		$support = LayoutHelper::render('components.swjprojects.toolbar.link',
-			array('link' => $link, 'text' => 'COM_SWJPROJECTS_SUPPORT', 'icon' => 'support', 'new' => true));
-		$toolbar->appendButton('Custom', $support, 'support');
-
 		// Add GitHub button
 		$link = 'https://github.com/SeptdirWorkshop/SWJProjects';
 		$github = LayoutHelper::render('components.swjprojects.toolbar.link',
