@@ -25,9 +25,6 @@
 		<server type="extension" priority="1" name="WebTolk - SW JProjects">
 			https://web-tolk.ru/component/swjprojects/jupdate?element=pkg_swjprojects
 		</server>
-		<server type="extension" priority="2" name="SW JProjects">
-			https://www.septdir.com/solutions/joomla/update?element=pkg_swjprojects
-		</server>
 	</updateservers>
 	<changelogurl>https://web-tolk.ru/jchangelog?element=pkg_swjprojects</changelogurl>
 </extension>
