@@ -90,7 +90,18 @@ $columns = 9;
 						</tfoot>
 						<tbody>
 						<?php foreach ($this->items as $i => $item) :
-                            $itemEditable = $user->authorise('core.edit', 'com_swjprojects.version.' . $item->id) || ($user->authorise('core.edit.own', 'com_swjprojects.version.' . $item->id) && $item->created_by == $user->id);
+                            /**
+                             * Before SW Jprojects v.1.10.0 $item->created_by is not exist.
+                             * So it is $item->created_by = 0 by default.
+                             */
+                            if(isset($item->created_by) && $item->created_by > 0)
+                            {
+                                $itemEditable = $user->authorise('core.edit', 'com_swjprojects.version.' . $item->id) || ($user->authorise('core.edit.own', 'com_swjprojects.version.' . $item->id) && $item->created_by == $user->id);
+                            } else {
+                                $itemEditable = true;
+                            }
+
+
 							$canChange = $user->authorise('core.edit.state', 'com_swjprojects.version.' . $item->id);
 							$link = ($itemEditable) ? Route::_('index.php?option=com_swjprojects&task=version.edit&id='
 								. $item->id) : '';

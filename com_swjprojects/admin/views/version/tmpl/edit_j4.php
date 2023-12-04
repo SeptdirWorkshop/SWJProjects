@@ -64,18 +64,23 @@ HTMLHelper::stylesheet('com_swjprojects/admin-j4.min.css', array('version' => 'a
 		<div class="row п-0">
 			<div class="col-lg-8">
 				<?php echo HTMLHelper::_('uitab.startTabSet', 'myTab', array('active' => 'general', 'class')); ?>
-				<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'general', Text::_('JGLOBAL_FIELDSET_CONTENT')); ?>
-				<fieldset class="form-horizontal">
-					<?php echo LayoutHelper::render('components.swjprojects.translate.field', array(
-						'forms' => $this->translateForms, 'name' => 'changelog')); ?>
-				</fieldset>
-				<?php echo HTMLHelper::_('uitab.endTab'); ?>
-				<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'metadata', Text::_('JGLOBAL_FIELDSET_METADATA_OPTIONS')); ?>
-				<fieldset>
-					<?php echo LayoutHelper::render('components.swjprojects.translate.fieldset', array(
-						'forms' => $this->translateForms, 'name' => 'metadata'), '', ['class' => 'asdasd']); ?>
-				</fieldset>
-				<?php echo HTMLHelper::_('uitab.endTab'); ?>
+                    <?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'general', Text::_('JGLOBAL_FIELDSET_CONTENT')); ?>
+                    <fieldset class="form-horizontal">
+                        <?php echo LayoutHelper::render('components.swjprojects.translate.field', array(
+                            'forms' => $this->translateForms, 'name' => 'changelog')); ?>
+                    </fieldset>
+                    <?php echo HTMLHelper::_('uitab.endTab'); ?>
+                    <?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'metadata', Text::_('JGLOBAL_FIELDSET_METADATA_OPTIONS')); ?>
+                    <fieldset>
+                        <?php echo LayoutHelper::render('components.swjprojects.translate.fieldset', array(
+                            'forms' => $this->translateForms, 'name' => 'metadata'), '', ['class' => 'asdasd']); ?>
+                    </fieldset>
+                    <?php echo HTMLHelper::_('uitab.endTab'); ?>
+                    <?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'metadata', Text::_('Публикация')); ?>
+                    <fieldset>
+                        <?php echo $this->form->renderFieldset('publishing'); ?>
+                    </fieldset>
+                    <?php echo HTMLHelper::_('uitab.endTab'); ?>
 				<?php echo HTMLHelper::_('uitab.endTabSet'); ?>
 			</div>
 			<div class="col-lg-4">
