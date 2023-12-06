@@ -58,16 +58,23 @@ class JFormFieldProjectupdateserverurl extends JFormField
 			$url     = Uri::getInstance(Route::link('site', SWJProjectsHelperRoute::getJUpdateRoute('', $project->element),false,'',true));
 
 			$component_params = ComponentHelper::getParams('com_swjprojects');
+
 			// Join over current translates
 			$lang         = $component_params->get('changelogurl_language');
 			if(empty($lang)){
 				$lang = Factory::getApplication()->getLanguage()->getTag();
 			}
-			$project_name = $project->translates[$lang]->title;
-			if (empty($project_name))
+			if (isset($project->translates[$lang]) && !empty($project->translates[$lang]->title))
 			{
-				$project_name = 'Your extension name';
-			}
+                $project_name = $project->translates[$lang]->title;
+			} else {
+                $lang = Factory::getApplication()->getLanguage()->getTag();
+                $project_name = $project->translates[$lang]->title;
+            }
+
+            if (empty($project_name)){
+                $project_name = 'Your extension name';
+            }
 
             if(!empty($url->getVar('Itemid'))){
                 $url->delVar('Itemid');
