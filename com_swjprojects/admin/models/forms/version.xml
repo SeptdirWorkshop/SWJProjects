@@ -100,7 +100,7 @@
 			   readonly="true"/>
 
 		<field name="date" type="calendar"
-			   label="JDATE"
+			   label="JGLOBAL_CREATED_DATE"
 			   translateformat="true"
 			   showtime="true"
 			   size="22"

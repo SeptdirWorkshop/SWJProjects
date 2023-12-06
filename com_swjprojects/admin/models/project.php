@@ -440,6 +440,24 @@ class SWJProjectsModelProject extends AdminModel
 			$data['relations'] = $registry->toString('json', array('bitmask' => JSON_UNESCAPED_UNICODE));
 		}
 
+        // Prepare date field data
+        if (empty($data['date']))
+        {
+            $data['date'] = Factory::getDate()->toSql();
+        }
+
+        // Prepare created_by field data
+        if (empty($data['created_by']))
+        {
+            $data['created_by'] = Factory::getUser()->id;
+        }
+
+        $data['modified'] = Factory::getDate()->toSql();
+
+        // Prepare modified_by field data
+        $data['modified_by'] = Factory::getUser()->id;
+
+
 		// Prepare params field data
 		if (isset($data['params']))
 		{

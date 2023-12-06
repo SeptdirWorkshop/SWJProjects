@@ -161,6 +161,23 @@ class SWJProjectsModelKey extends AdminModel
 			$data['date_end'] = $this->getDbo()->getNullDate();
 		}
 
+        // Prepare date field data
+        if (empty($data['date']))
+        {
+            $data['date'] = Factory::getDate()->toSql();
+        }
+
+        // Prepare created_by field data
+        if (empty($data['created_by']))
+        {
+            $data['created_by'] = Factory::getUser()->id;
+        }
+
+        $data['modified'] = Factory::getDate()->toSql();
+
+        // Prepare modified_by field data
+        $data['modified_by'] = Factory::getUser()->id;
+
 		// Prepare plugins field data
 		if (isset($data['plugins']))
 		{

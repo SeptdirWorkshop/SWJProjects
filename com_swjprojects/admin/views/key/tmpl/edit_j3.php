@@ -37,13 +37,19 @@ Factory::getDocument()->addScriptDeclaration('
 	  method="post" name="adminForm" id="item-form" class="form-validate translate-tabs" enctype="multipart/form-data">
 	<div class="row-fluid">
 		<div class="span9">
-			<fieldset class="form-inline form-inline-header">
-				<?php echo $this->form->renderFieldset('key'); ?>
-			</fieldset>
-			<hr>
-			<fieldset class="form-horizontal">
-				<?php echo $this->form->renderFieldset('plugins'); ?>
-			</fieldset>
+            <?php echo HTMLHelper::_('bootstrap.startTabSet', 'myTab', ['active' => 'general', 'recall' => true, 'breakpoint' => 768]); ?>
+            <?php echo HTMLHelper::_('bootstrap.addTab', 'myTab', 'general', JText::_('JGLOBAL_FIELDSET_CONTENT')); ?>
+            <fieldset class="form-horizontal p-3">
+                <?php echo $this->form->renderFieldset('key'); ?>
+                <?php echo $this->form->renderFieldset('plugins'); ?>
+            </fieldset>
+            <?php echo HTMLHelper::_('bootstrap.endTab'); ?>
+            <?php echo HTMLHelper::_('bootstrap.addTab', 'myTab', 'publishing', JText::_('COM_SWJPROJECTS_PUBLISHING')); ?>
+            <fieldset>
+                <?php echo $this->form->renderFieldset('publishing'); ?>
+            </fieldset>
+            <?php echo HTMLHelper::_('bootstrap.endTab'); ?>
+            <?php echo HTMLHelper::_('bootstrap.endTabSet'); ?>
 		</div>
 		<div class="span3">
 			<fieldset class="well form-horizontal form-horizontal-desktop">

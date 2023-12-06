@@ -61,8 +61,8 @@ HTMLHelper::stylesheet('com_swjprojects/admin-j4.min.css', array('version' => 'a
 		</div>
 	</fieldset>
 	<div class="main-card">
-		<div class="row п-0">
-			<div class="col-lg-8">
+		<div class="row">
+			<div class="col-lg-8 col-xl-9">
 				<?php echo HTMLHelper::_('uitab.startTabSet', 'myTab', array('active' => 'general', 'class')); ?>
                     <?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'general', Text::_('JGLOBAL_FIELDSET_CONTENT')); ?>
                     <fieldset class="form-horizontal">
@@ -76,16 +76,14 @@ HTMLHelper::stylesheet('com_swjprojects/admin-j4.min.css', array('version' => 'a
                             'forms' => $this->translateForms, 'name' => 'metadata'), '', ['class' => 'asdasd']); ?>
                     </fieldset>
                     <?php echo HTMLHelper::_('uitab.endTab'); ?>
-                    <?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'metadata', Text::_('Публикация')); ?>
+                    <?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'publishing', Text::_('COM_SWJPROJECTS_PUBLISHING')); ?>
                     <fieldset>
                         <?php echo $this->form->renderFieldset('publishing'); ?>
                     </fieldset>
                     <?php echo HTMLHelper::_('uitab.endTab'); ?>
 				<?php echo HTMLHelper::_('uitab.endTabSet'); ?>
 			</div>
-			<div class="col-lg-4">
-				<div class="p-3">
-					<div class="options-form">
+			<div class="col-lg-4 col-xl-3 bg-light border-start p-3">
 						<div class="control-group">
 							<div class="control-label">
 								<label class="h5"><?php echo Text::_('COM_SWJPROJECTS_FILE_STATE'); ?></label>
@@ -103,15 +101,9 @@ HTMLHelper::stylesheet('com_swjprojects/admin-j4.min.css', array('version' => 'a
 							</div>
 						</div>
 						<?php echo $this->form->renderFieldset('file'); ?>
-					</div>
-					<div class="options-form form-vertical">
 						<?php echo $this->form->renderFieldset('global'); ?>
-					</div>
-					<div class="options-form form-vertical">
 						<legend><?php echo Text::_('COM_SWJPROJECTS_STATISTICS'); ?></legend>
 						<?php echo $this->form->renderFieldset('statistics'); ?>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

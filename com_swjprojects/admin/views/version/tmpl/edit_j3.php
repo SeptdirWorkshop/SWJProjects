@@ -77,6 +77,12 @@ Factory::getDocument()->addScriptDeclaration('
 					'forms' => $this->translateForms, 'name' => 'metadata')); ?>
 			</fieldset>
 			<?php echo HTMLHelper::_('bootstrap.endTab'); ?>
+
+            <?php echo HTMLHelper::_('bootstrap.addTab', 'myTab', 'publishing', Text::_('COM_SWJPROJECTS_PUBLISHING')); ?>
+			<fieldset class="form-horizontal">
+                <?php echo $this->form->renderFieldset('publishing'); ?>
+			</fieldset>
+			<?php echo HTMLHelper::_('bootstrap.endTab'); ?>
 			<?php echo HTMLHelper::_('bootstrap.endTabSet'); ?>
 		</div>
 		<div class="span3">

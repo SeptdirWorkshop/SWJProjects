@@ -34,8 +34,8 @@ HTMLHelper::stylesheet('com_swjprojects/admin-j4.min.css', array('version' => 'a
 		</div>
 	</fieldset>
 	<div class="main-card">
-		<div class="row п-0">
-			<div class="col-lg-8">
+		<div class="row">
+			<div class="col-lg-8 col-xl-9">
 				<?php echo HTMLHelper::_('uitab.startTabSet', 'myTab', array('active' => 'general', 'class')); ?>
 				<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'general', Text::_('JGLOBAL_FIELDSET_CONTENT')); ?>
 				<fieldset class="w-100">
@@ -62,14 +62,15 @@ HTMLHelper::stylesheet('com_swjprojects/admin-j4.min.css', array('version' => 'a
 						'forms' => $this->translateForms, 'name' => 'metadata')); ?>
 				</fieldset>
 				<?php echo HTMLHelper::_('uitab.endTab'); ?>
+                <?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'publishing', Text::_('COM_SWJPROJECTS_PUBLISHING')); ?>
+                <fieldset>
+                    <?php echo $this->form->renderFieldset('publishing'); ?>
+                </fieldset>
+                <?php echo HTMLHelper::_('uitab.endTab'); ?>
 				<?php echo HTMLHelper::_('uitab.endTabSet'); ?>
 			</div>
-			<div class="col-lg-4">
-				<div class="form-vertical p-3">
-					<div class="options-form">
+			<div class="col-lg-4 col-xl-3 bg-light border-start p-3">
 						<?php echo $this->form->renderFieldset('global'); ?>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
